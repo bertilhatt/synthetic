@@ -98,7 +98,7 @@ class Session():
 
 def generate_sessions(n_users: int, start: dt.date, stop: dt.date, churn: float = 0.2):
     cols = ['timestamp', 'user_id', 'url', 'page_type', 'platform', 'domain', 'deal', 'transaction']
-    site_name = 'secretescapes'
+    site_name = 'examplesite'
     sample = Sample(n_users, start, stop, site_name, cols)
 
     # Mix marketing effect
@@ -114,3 +114,8 @@ def generate_sessions(n_users: int, start: dt.date, stop: dt.date, churn: float 
 if __name__ == '__main__':
     output = generate_sessions(18_000, dt.date(2020, 3, 1), dt.date(2021, 3, 1))
     output.to_csv('data/output_new.csv')
+
+# TODO
+# Pattern of session as transition graph
+# Format of output as parameter
+# Aggregate data into summaries
